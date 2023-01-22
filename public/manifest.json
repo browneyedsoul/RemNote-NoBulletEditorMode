@@ -1,22 +1,23 @@
 {
   "manifestVersion": 1,
-  "id": "snippet_template",
-  "name": "Snippet Template",
-  "author": "remnote",
-  "repoUrl": "https://www.google.com",
+  "id": "no-bullet-editor-mode",
+  "name": "No Bullet Editor Mode",
+  "author": "Min-Ki Park",
+  "repoUrl": "https://github.com/browneyedsoul/RemNote-NoBulletEditorMode",
+  "unlisted": true,
   "version": {
     "major": 0,
-    "minor": 0,
-    "patch": 1
+    "minor": 1,
+    "patch": 0
   },
   "theme": [],
-  "enableOnMobile": false,
+  "enableOnMobile": true,
   "description": "",
-  "requestNative": false,
+  "requestNative": true,
   "requiredScopes": [
     {
       "type": "All",
-      "level": "ReadCreateModify"
+      "level": "Read"
     }
   ]
 }
