@@ -125,6 +125,9 @@
 // Parent Bullet (Toggle Triangle)
     .rem-button__container {
         .rem-bullet__container {
+            > span {
+                display: flex;
+            }
             .rem-bullet.rem-bullet--hidden-children,
             .rem-bullet.rem-bullet--hidden-children.rem-header__bullet--1,
             .rem-bullet.rem-bullet--hidden-children.rem-header__bullet--2,
