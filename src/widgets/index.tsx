@@ -1,4 +1,5 @@
 import { declareIndexPlugin, ReactRNPlugin } from "@remnote/plugin-sdk";
+import "../lib/nobullet.ts"
 
 export const [BULLET_LIST, BULLET_LISTS] = ["bulletlist_power-up", "bulletlists_power-up"];
 
