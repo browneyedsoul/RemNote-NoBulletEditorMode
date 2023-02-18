@@ -1,8 +1,10 @@
-export function Nobullet() {
-  const oriButton: any = document.querySelector(".rem-container--focused .toggle-collapse-button");
-  const newButton: any = document.querySelector(".rem-container--focused .perfect-circle::before");
+export async function Nobullet() {
+  const oriButton = document.querySelector<HTMLButtonElement>(".rem-container--focused .toggle-collapse-button");
+  const newButton = document.querySelector<HTMLElement>(".rem-container--focused .perfect-circle::before");
 
-  newButton.addEventListener("click", () => {
-    oriButton.click();
-  });
+  if (newButton && oriButton) {
+    newButton.addEventListener("click", () => {
+      oriButton.click();
+    });
+  }
 }
