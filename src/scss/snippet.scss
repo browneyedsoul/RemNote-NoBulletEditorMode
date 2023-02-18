@@ -1,46 +1,15 @@
-.rem:not(.rem-container--focused):not(:hover) .perfect-circle__inner {
-  visibility: hidden;
+:root {
+    --nobullet-triangle: #000;
+    --nobullet-triangle-dark: #D4D4DA;
 }
 
-.rem[data-rem-tags~="bulletlist"],
-[data-rem-container-tags~="bulletlists"] .tree-node--children .rem {
-  margin-left: 1rem;
+.hierarchy-editor--ltr {
+    .TreeNode,
+    .TreeNode--list {
+        margin-left: 1.7rem;
+    }
 }
-
-#document .rem[data-rem-tags~="bulletlist"] .perfect-circle__inner {
-  visibility: visible;
-}
-#document [data-rem-container-tags~="bulletlists"] > .tree-node--children .rem .perfect-circle__inner {
-  visibility: visible;
-}
-
-.rn-bullet-container > span {
-  display: flex;
-  align-items: center;
-}
-
-.rn-rem-bullet--hidden-children::before {
-  content: "";
-  display: block;
-  position: relative;
-  left: -1.25rem;
-  width: 0;
-  height: 0;
-  border-top: 0.35rem solid transparent;
-  border-left: 0.35rem solid black;
-  border-bottom: 0.35rem solid transparent;
-  border-radius: 25px;
-}
-.dark .rn-rem-bullet--hidden-children::before {
-  border-left: 0.35rem solid #D4D4DA;
-}
-
-.hierarchy-editor--ltr .TreeNode, .hierarchy-editor--ltr .TreeNode--list {
-  margin-left: 1.5rem;
-}
-
-[data-rem-container-tags~="bulletlist"],
-[data-rem-container-tags~="bulletlists"] {
+%rmvTag {
     .hierarchy-editor__tag-bar__tag {
         background-color: transparent !important;
 
@@ -49,6 +18,106 @@
         }
         .rn-tag__close {
             opacity: .3;
+        }
+    }
+}
+@mixin Nobullet($nobullet-triangle) {
+    .rn-rem-bullet--hidden-children::after {
+        content: "";
+        display: block;
+        position: relative;
+        left: 1.75rem;
+        width: 0;
+        height: 0;
+        border-top: 0.35rem solid transparent;
+        border-left: 0.35rem solid $nobullet-triangle;
+        border-bottom: 0.35rem solid transparent;
+        border-radius: 25px;
+        pointer-events: none;
+    }
+}
+@include Nobullet(
+    var(--nobullet-triangle)
+);
+.dark {
+    @include Nobullet(
+        var(--nobullet-triangle-dark)
+    );
+}
+
+.rn-bullet-container > span {
+  display: flex;
+  align-items: center;
+}
+
+.rn-bullet-container:has(.rn-rem-bullet--hidden-children) {
+    position: relative;
+    left: -1.75rem;
+}
+.toggle-collapse-button {
+    position: relative;
+    left: 1.4rem;
+}
+
+.rn-editor-container {
+    &:has(> .tree-node--children > .rn-editor-container) {
+        .tree-node--parent {
+            &:hover,
+            &:focus-within {
+                .rn-bullet-container {
+                    position: relative;
+                    left: -1.75rem;
+                }
+            }
+        }
+    }
+}
+
+.rem:not(.rem-container--focused):not(:hover) .perfect-circle__inner {
+  visibility: hidden;
+}
+
+[data-rem-tags~="document"] {
+    .rn-rem-icon-bullet {
+        border-style: unset;
+    }
+    .rn-bullet-container {
+        position: relative;
+        left: -1.27rem;
+    }
+    .rn-rem-bullet--hidden-children {
+        &::after {
+            left: 0.7rem;
+        }
+    }
+    &:not(.rn-rem-bullet--hidden-children) {
+        .rn-bullet-container {
+            left: unset;
+        }
+    }
+    .rn-rem-icon-bullet {
+        display: flex;
+        align-items: center;
+    }
+}
+
+#document {
+    [data-rem-tags~="bulletlist"] {
+        margin-left: 1rem;
+        @extend %rmvTag;
+        .perfect-circle__inner {
+            visibility: visible;
+        }
+    }
+    [data-rem-container-tags~="bulletlists"] {
+        @extend %rmvTag;
+        > .tree-node--children {
+            .rem {
+                margin-left: 1rem;
+                .perfect-circle__inner {
+                    visibility: visible;
+                }
+            }
         }
     }
 }
