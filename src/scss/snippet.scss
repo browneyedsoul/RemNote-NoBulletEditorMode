@@ -93,7 +93,15 @@
 .rem:not(:hover) .perfect-circle__inner {
   visibility: hidden;
 }
-
+.rn-rem-icon-bullet {
+    &.rn-rem-bullet--hidden-children {
+        svg[data-icon="document"],
+        svg[data-icon="folder"] {
+            position: relative;
+            left: 0.2rem;
+        }
+    }
+}
 [data-rem-tags~="document"] {
     .rn-rem-icon-bullet {
         border-style: unset;
