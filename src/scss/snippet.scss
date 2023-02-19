@@ -80,8 +80,7 @@
 .rn-editor-container {
     .tree-node--parent {
         &:has(.toggle-collapse-button) {
-            &:hover,
-            &:focus-within {
+            &:hover {
                 .rn-bullet-container {
                     position: relative;
                     left: -1.5rem;
@@ -91,7 +90,7 @@
     }
 }
 
-.rem:not(.rem-container--focused):not(:hover) .perfect-circle__inner {
+.rem:not(:hover) .perfect-circle__inner {
   visibility: hidden;
 }
 
