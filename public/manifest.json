@@ -1,13 +1,13 @@
 {
   "manifestVersion": 1,
-  "id": "no-bullet",
+  "id": "no-bullet-editor-mode",
   "name": "No Bullet Editor Mode",
   "author": "Min-Ki Park",
   "repoUrl": "https://github.com/browneyedsoul/RemNote-NoBulletEditorMode",
   "version": {
     "major": 0,
     "minor": 3,
-    "patch": 0
+    "patch": 1
   },
   "theme": [],
   "enableOnMobile": true,
