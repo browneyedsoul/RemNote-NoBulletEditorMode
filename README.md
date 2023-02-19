@@ -1,5 +1,8 @@
-# No Bullet Editor Mode (UnOfficial)
+# No Bullet Editor Mode
 
-## Install
+## User Target
+- People who feels overwelmed by too many Rem dots on screen
+- For those who feels Bullet-based Outliner is way too cluttered with crowded Rem bullet points.
 
-<a href="https://www.remnote.com/plugins/no-bullet-editor-mode" target="_blank">Click to Install</a>
+## Benefit
+- Combined UX : Block based Editor + Tree node Outliner
