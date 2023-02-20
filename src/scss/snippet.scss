@@ -53,26 +53,10 @@
         }
     }
     #document {
-    .tree-node--parent {
-        > [data-rem-tags~="bulletlist"] {
-            margin-left: 1rem;
-            @extend %rmvTag;
-            .perfect-circle__inner {
-                visibility: visible;
-                .rem-bullet__core {
-                    fill: $nobullet-triangle;
-                }
-            }
-        }
-    }
-    [data-rem-container-tags~="bulletlists"] {
-        @extend %rmvTag;
-        .tree-node--children {
-            .rem {
+        .tree-node--parent {
+            > [data-rem-tags~="bulletlist"] {
                 margin-left: 1rem;
-                .rn-bullet-container {
-                    left: unset;
-                }
+                @extend %rmvTag;
                 .perfect-circle__inner {
                     visibility: visible;
                     .rem-bullet__core {
@@ -80,12 +64,41 @@
                     }
                 }
             }
-            .toggle-collapse-button {
-                left: unset;
+        }
+        [data-rem-container-tags~="bulletlists"] {
+            @extend %rmvTag;
+            .tree-node--children {
+                .rem {
+                    margin-left: 1rem;
+                    .rn-bullet-container {
+                        left: unset;
+                    }
+                    .perfect-circle {
+                        .perfect-circle__inner {
+                            visibility: visible;
+                            .rem-bullet__core {
+                                fill: $nobullet-triangle;
+                            }
+                        }
+                    }
+                }
+                .toggle-collapse-button {
+                    left: unset;
+                }
+                .tree-node--parent {
+                    .rem {
+                        .perfect-circle {
+                            &.rn-rem-bullet--hidden-children {
+                                &::after {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
-}
 }
 @include Nobullet(
     var(--nobullet-triangle)
