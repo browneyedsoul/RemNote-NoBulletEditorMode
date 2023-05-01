@@ -4,10 +4,6 @@ export const [BULLET_LIST, BULLET_LISTS] = ["bulletlist_power-up", "bulletlists_
 
 let NoBulletCSS: string;
 
-const leftPD = `
-  
-`;
-
 async function onActivate(plugin: ReactRNPlugin) {
   try {
     const response = await fetch("snippet.css");
@@ -57,6 +53,9 @@ async function onActivate(plugin: ReactRNPlugin) {
       `
 .hierarchy-editor--ltr .TreeNode, .hierarchy-editor--ltr .TreeNode--list {
   padding-left: ${paddingCtrl}px;
+}
+.node-card-item::before {
+  margin-left: -${paddingCtrl}px;
 }
       `
     );
