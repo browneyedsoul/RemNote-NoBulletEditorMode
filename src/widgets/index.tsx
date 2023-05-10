@@ -4,7 +4,7 @@ export const [BULLET_LIST, BULLET_LISTS] = ["bulletlist_power-up", "bulletlists_
 
 async function onActivate(plugin: ReactRNPlugin) {
   let NoBulletCSS: string;
-  
+
   try {
     const response = await fetch("snippet.css");
     const text = await response.text();
@@ -37,7 +37,7 @@ async function onActivate(plugin: ReactRNPlugin) {
     id: "bulletlists",
     name: "Bulletlists",
     quickCode: "bls",
-    keyboardShortcut: "cmd+opt+shift+b",
+    keyboardShortcut: "cmd+opt+ctrl+b",
     description: "Make bullets",
     action: async () => {
       const rem = await plugin.focus.getFocusedRem();
