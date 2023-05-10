@@ -9,5 +9,5 @@
 
 ## How to Make Bullets
 - Use the omnibar/slash command to access the `bulletlist` and `bulletlists` commands.
-- If you need bullet points, select the `bulletlist` menu item.
-- To create a single tag for bulleted children, select the `bulletlists` menu item.
+- If you need bullet points, select the `bulletlist` menu item. (⌘+⌥+b)
+- To create a single tag for bulleted children, select the `bulletlists` menu item. (⌘+⌥+⇧+b)
