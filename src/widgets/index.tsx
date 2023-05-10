@@ -2,9 +2,9 @@ import { declareIndexPlugin, ReactRNPlugin } from "@remnote/plugin-sdk";
 
 export const [BULLET_LIST, BULLET_LISTS] = ["bulletlist_power-up", "bulletlists_power-up"];
 
-let NoBulletCSS: string;
-
 async function onActivate(plugin: ReactRNPlugin) {
+  let NoBulletCSS: string;
+  
   try {
     const response = await fetch("snippet.css");
     const text = await response.text();
@@ -25,6 +25,8 @@ async function onActivate(plugin: ReactRNPlugin) {
   await plugin.app.registerCommand({
     id: "bulletlist",
     name: "Bulletlist",
+    quickCode: "bl",
+    keyboardShortcut: "cmd+opt+b",
     description: "Make a bullet",
     action: async () => {
       const rem = await plugin.focus.getFocusedRem();
@@ -34,6 +36,8 @@ async function onActivate(plugin: ReactRNPlugin) {
   await plugin.app.registerCommand({
     id: "bulletlists",
     name: "Bulletlists",
+    quickCode: "bls",
+    keyboardShortcut: "cmd+opt+shift+b",
     description: "Make bullets",
     action: async () => {
       const rem = await plugin.focus.getFocusedRem();
