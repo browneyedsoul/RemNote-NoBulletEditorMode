@@ -122,6 +122,13 @@
     position: relative;
     left: 1.4rem;
 }
+[data-rem-tags~="list-item"] {
+    .toggle-collapse-button {
+        z-index: 2;
+        background-color: transparent;
+        opacity: .5;
+    }   
+}
 
 .rn-editor-container {
     .tree-node--parent {
