@@ -124,10 +124,12 @@
 }
 [data-rem-tags~="document"] {
     .toggle-collapse-button {
-        &:has(svg.rotate-0) {
-            position: relative;
-            left: 1.75rem;
-        }
+        position: relative;
+        left: 1.75rem;
+    }
+    .toggle-collapse-button:not(.toggle-collapse-button:has(svg.rotate-0)) {
+        position: relative;
+        left: 2rem;
     }
 }
 [data-rem-tags~="list-item"] {
