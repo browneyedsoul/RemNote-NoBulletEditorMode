@@ -122,6 +122,14 @@
     position: relative;
     left: 1rem;
 }
+[data-rem-tags~="document"] {
+    .toggle-collapse-button {
+        &:has(svg.rotate-0) {
+            position: relative;
+            left: 1.75rem;
+        }
+    }
+}
 [data-rem-tags~="list-item"] {
     .toggle-collapse-button {
         z-index: 2;
