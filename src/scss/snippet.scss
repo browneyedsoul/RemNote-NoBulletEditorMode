@@ -179,3 +179,10 @@
         }
     }
 }
+[data-rem-tags~="rem-with-an-alias"] {
+    > div {
+        > div.flex.items-center {
+            padding-left: 24px;
+        }
+    }
+}
