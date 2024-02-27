@@ -179,10 +179,10 @@
         }
     }
 }
-[data-rem-tags~="rem-with-an-alias"] {
-    > div {
-        > div.flex.items-center {
-            padding-left: 24px;
-        }
-    }
+
+// patch for 1.13.36
+.hierarchy-editor--ltr .rn-editor-container:not(.is-explicit-folder-and-root-explicit-folder) .TreeNode, 
+.hierarchy-editor--ltr .rn-editor-container:not(.is-explicit-folder-and-root-explicit-folder) .TreeNode--list {
+    margin-left: 1.6rem;
+    padding-left: unset;
 }
