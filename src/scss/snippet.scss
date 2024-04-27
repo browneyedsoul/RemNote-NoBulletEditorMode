@@ -1,6 +1,10 @@
 :root {
     --nobullet-triangle: #000;
     --nobullet-triangle-dark: #D4D4DA;
+    --nobullet-quote-bg: #F4F4FB;
+    --nobullet-quote-bg-dark: #2B2B34;
+    --nobullet-quote-border: #222;
+    --nobullet-quote-border-dark: #666;
 }
 
 .hierarchy-editor--ltr {
@@ -21,7 +25,7 @@
     }
 }
 
-@mixin Nobullet($nobullet-triangle) {
+@mixin Nobullet($nobullet-triangle, $nobullet-quote-bg, $nobullet-quote-border) {
     .rn-rem-icon-bullet.rn-rem-bullet--hidden-children {
         &::after {
             content: "";
@@ -50,6 +54,21 @@
             border-bottom: 0.35rem solid transparent;
             border-radius: 25px;
             pointer-events: none;
+        }
+    }
+    [data-rem-container-tags~="quote"] {
+        left: 1.5rem !important;
+        background: $nobullet-quote-bg;
+        border-left: 4px solid $nobullet-quote-border;
+        width: calc(100% - 1.75rem);
+        .rn-quote-content {
+            // margin-left: 1.5rem;
+            --rn-quote-offset: unset !important;
+            border-left: unset;
+            .toggle-collapse-button {
+                left: 1rem;
+                background-color: unset !important;
+            }
         }
     }
     #document {
@@ -101,11 +120,15 @@
     }
 }
 @include Nobullet(
-    var(--nobullet-triangle)
+    var(--nobullet-triangle),
+    var(--nobullet-quote-bg),
+    var(--nobullet-quote-border)
 );
 .dark {
     @include Nobullet(
-        var(--nobullet-triangle-dark)
+        var(--nobullet-triangle-dark),
+        var(--nobullet-quote-bg-dark),
+        var(--nobullet-quote-border-dark)
     );
 }
 
