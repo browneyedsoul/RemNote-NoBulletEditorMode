@@ -145,7 +145,11 @@ $scaling-values: (header-1: 2, header-2: 1.5, header-3: 1.25);
         > div {
           > .inline-flex {
             > .rn-bullet-container {
-              @include scaleTransform($scale);
+              > span {
+                > span {
+                  @include scaleTransform($scale);
+                }
+              }
             }
           }
         }
