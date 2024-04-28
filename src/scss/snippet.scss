@@ -140,22 +140,16 @@ $scaling-values: (header-1: 2, header-2: 1.5, header-3: 1.25);
 
 @each $header, $scale in $scaling-values {
   .rem-container--#{$header} {
-    > div {
-      > .rem-button__container {
-        > div {
-          > .inline-flex {
-            > .rn-bullet-container {
-              > span {
+        .rem-button__container {
+            .rn-bullet-container {
                 > span {
-                  @include scaleTransform($scale);
+                    > span {
+                        @include scaleTransform($scale);
+                    }
                 }
-              }
             }
-          }
         }
-      }
     }
-  }
 }
 
 
@@ -216,9 +210,9 @@ $scaling-values: (header-1: 2, header-2: 1.5, header-3: 1.25);
     }
 }
 [data-rem-tags~="document"] {
-    // .rn-rem-icon-bullet {
-    //     border-style: unset;
-    // }
+    .rn-rem-icon-bullet {
+        border-style: unset;
+    }
     .rn-rem-icon-bullet {
         display: flex;
         align-items: center;
